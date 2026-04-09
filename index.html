@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Apostolic Pathway - Restoring the Church to Truth, Power and True Discipleship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, .title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-card {
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(251, 191, 36, 0.2);
+        }
+        
+        .assessment-button {
+            transition: all 0.3s ease;
+        }
+        
+        .assessment-button:hover {
+            border-color: #fbbf24;
+            background-color: #fef3c7;
+        }
+        
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+        
+        .navbar-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .decorative-cross {
+            opacity: 0.05;
+            font-size: 10rem;
+            position: absolute;
+            top: 5rem;
+            right: 5rem;
+        }
+
+        .docs-container {
+            background: linear-gradient(to bottom, #f3f4f6, #ffffff);
+            padding: 3rem 1.5rem;
+        }
+
+        .doc-section {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #fbbf24;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .doc-section h2 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-size: 1.875rem;
+        }
+
+        .doc-section h3 {
+            color: #1f2937;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .doc-section p {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .doc-section ul, .doc-section ol {
+            margin: 1rem 0 1rem 2rem;
+            color: #4b5563;
+        }
+
+        .doc-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .doc-section code {
+            background: #f3f4f6;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d97706;
+        }
+
+        .doc-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .doc-section table th,
+        .doc-section table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .doc-section table th {
+            background: #fbbf24;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #fffbeb;
+            border-left: 4px solid #fbbf24;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .feature-card {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .feature-card h4 {
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            color: #fbbf24;
+            border-bottom-color: #fbbf24;
+        }
+
+        .tab-button:hover {
+            color: #000;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="navbar-sticky bg-black text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <button onclick="navigateTo('home')" class="text-2xl font-bold text-yellow-500">
+                APW
+            </button>
+            
+            <div class="hidden md:flex gap-8">
+                <button onclick="navigateTo('home')" class="hover:text-yellow-500 transition font-semibold">Home</button>
+                <button onclick="navigateTo('about')" class="hover:text-yellow-500 transition font-semibold">About</button>
+                <button onclick="navigateTo('assessments')" class="hover:text-yellow-500 transition font-semibold">Assessments</button>
+                <button onclick="navigateTo('counseling')" class="hover:text-yellow-500 transition font-semibold">Counseling</button>
+                <button onclick="navigateTo('docs')" class="hover:text-yellow-500 transition font-semibold">Documentation</button>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="px-3 py-1 bg-yellow-500 text-black rounded font-bold text-sm hover:bg-yellow-400 transition" id="langBtn">
+                    🇫🇷 FR
+                </button>
+                
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden bg-gray-900 px-6" id="mobileMenu">
+            <button onclick="navigateTo('home')" class="block w-full text-left py-3 hover:text-yellow-500 transition">Home</button>
+            <button onclick="navigateTo('about')" class="block w-full text-left py-3 hover:text-yellow-500 transition">About</button>
+            <button onclick="navigateTo('assessments')" class="block w-full text-left py-3 hover:text-yellow-500 transition">Assessments</button>
+            <button onclick="navigateTo('counseling')" class="block w-full text-left py-3 hover:text-yellow-500 transition">Counseling</button>
+            <button onclick="navigateTo('docs')" class="block w-full text-left py-3 hover:text-yellow-500 transition">Documentation</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="content"></div>
+
+    <script>
+        let currentPage = 'home';
+        let currentLanguage = 'en';
+        let selectedCategory = null;
+        let currentQuestion = 0;
+        let assessmentScores = [];
+        
+        const translations = {
+            en: {
+                nav: {
+                    home: 'Home',
+                    about: 'About',
+                    assessments: 'Assessments',
+                    counseling: 'Counseling',
+                    docs: 'Documentation',
+                },
+                hero: {
+                    tagline: 'Restoring the Church to Truth, Power and True Discipleship',
+                    subtitle: 'A spiritual restoration hub for believers, leaders, and the African Church',
+                    cta1: 'Start Assessment',
+                    cta2: 'Get Help Now',
+                    whoAreYou: 'Who Are You?'
+                },
+                categories: {
+                    newconverts: {
+                        title: 'New Converts',
+                        description: 'Establish a strong foundation in Christ with structured discipleship pathways',
+                        icon: '🌱',
+                    },
+                    backsliders: {
+                        title: 'Backsliders',
+                        description: 'Healing from church hurt, restoration, and finding faith again',
+                        icon: '❤️',
+                    },
+                    workers: {
+                        title: 'Church Workers',
+                        description: 'Heart transformation and servant leadership development',
+                        icon: '🙏',
+                    },
+                    leaders: {
+                        title: 'Church Leaders',
+                        description: 'Vision clarity, strategic alignment, and discipleship focus',
+                        icon: '🛡️',
+                    },
+                    pastors: {
+                        title: 'Pastors & Shepherds',
+                        description: 'Renewal, apostolic leadership, and raising disciples',
+                        icon: '⛪',
+                    },
+                    youth: {
+                        title: 'Youth & Young Adults',
+                        description: 'Purpose, mentorship, and becoming the backbone of the Church',
+                        icon: '⚡',
+                    },
+                },
+                contact: {
+                    phone: '+237 671 187 375',
+                    email: 'lukongchrysantus7@gmail.com',
+                    talktocounselor: 'Talk to a Counselor',
+                    needhelp: 'Do you need immediate spiritual guidance?',
+                    callus: 'Call Us',
+                    emailus: 'Email Us',
+                    callnow: 'Call Now',
+                    sendEmail: 'Send Email',
+                    youarenotalone: 'You Are Not Alone',
+                    needimmediateguidance: 'Need Immediate Spiritual Guidance?',
+                },
+                assessments: {
+                    spiritualassessment: 'Spiritual Assessment',
+                    startassessment: 'Start Assessment',
+                    questionof: 'Question',
+                    of: 'of',
+                    resultspage: {
+                        results: 'Assessment Results',
+                        yourScore: 'Your Spiritual Health Score:',
+                        nextSteps: 'Recommended Next Steps:',
+                        encouragement: 'A Word of Encouragement',
+                        verse: '"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." - Jeremiah 29:11',
+                        talktocounselor: 'Talk to a Counselor',
+                        takeAnother: 'Take Another Assessment',
+                    }
+                },
+                about: {
+                    title: 'About The Apostolic Pathway',
+                    intro: 'The Apostolic Pathway exists to restore the Church to her apostolic foundations: Truth, Power, and True Discipleship. In an era where activity has replaced impact and programs have replaced transformation, we stand as a beacon calling believers back to the essence of Christ\'s mandate.',
+                    vision: 'Our Vision',
+                    visiontext: 'A Church operating in the fullness of apostolic authority, raising mature disciples who know God intimately, walk in His power, and impact their generation with uncompromising truth and sacrificial love.',
+                    mission: 'Our Mission',
+                    missiontext: 'To equip believers, restore the backslidden, train leaders, and empower the Church with biblical counsel, spiritual resources, and apostolic wisdom for complete transformation.',
+                },
+                counseling: {
+                    title: 'Spiritual Counseling & Support',
+                    youarenotalone: 'You Are Not Alone',
+                    intro: 'Whether you\'re struggling with faith, dealing with church hurt, navigating leadership challenges, or seeking spiritual direction, trained counselors are here to listen, guide, and help you find restoration in Christ.',
+                    contacttoday: 'Contact Us Today',
+                    whattoexpect: 'What to Expect',
+                    confidential: 'Confidential and compassionate listening',
+                    biblical: 'Biblical wisdom and spiritual guidance',
+                    practical: 'Practical steps toward healing and restoration',
+                    connection: 'Connection to resources and community support',
+                },
+                docs: {
+                    title: 'Complete Documentation',
+                    overview: 'Documentation Overview',
+                    quickstart: 'Quick Start Guide',
+                    features: 'Feature Summary',
+                    deployment: 'Deployment Guide',
+                }
+            },
+            fr: {
+                nav: {
+                    home: 'Accueil',
+                    about: 'À propos',
+                    assessments: 'Évaluations',
+                    counseling: 'Conseil',
+                    docs: 'Documentation',
+                },
+                hero: {
+                    tagline: 'Restaurer l\'Église à la Vérité, la Puissance et le Vrai Discipulat',
+                    subtitle: 'Un centre de restauration spirituelle pour les croyants, les leaders et l\'Église africaine',
+                    cta1: 'Commencer l\'Évaluation',
+                    cta2: 'Obtenir de l\'Aide',
+                    whoAreYou: 'Qui êtes-vous?'
+                },
+                categories: {
+                    newconverts: {
+                        title: 'Nouveaux Convertis',
+                        description: 'Établir une fondation solide en Christ avec des chemins de discipulat structurés',
+                        icon: '🌱',
+                    },
+                    backsliders: {
+                        title: 'Apostats',
+                        description: 'Guérison des blessures ecclésiales, restauration et retrouver la foi',
+                        icon: '❤️',
+                    },
+                    workers: {
+                        title: 'Ouvriers Chrétiens',
+                        description: 'Transformation du cœur et développement du leadership serviteur',
+                        icon: '🙏',
+                    },
+                    leaders: {
+                        title: 'Leaders d\'Église',
+                        description: 'Clarté de vision, alignement stratégique et focus sur le discipulat',
+                        icon: '🛡️',
+                    },
+                    pastors: {
+                        title: 'Pasteurs et Bergers',
+                        description: 'Renouvellement, leadership apostolique et éducation des disciples',
+                        icon: '⛪',
+                    },
+                    youth: {
+                        title: 'Jeunes et Adultes',
+                        description: 'But, mentorat et devenir l\'épine dorsale de l\'Église',
+                        icon: '⚡',
+                    },
+                },
+                contact: {
+                    phone: '+237 671 187 375',
+                    email: 'lukongchrysantus7@gmail.com',
+                    talktocounselor: 'Parler à un Conseiller',
+                    needhelp: 'Avez-vous besoin d\'une guidance spirituelle immédiate?',
+                    callus: 'Appelez-nous',
+                    emailus: 'Envoyez-nous un Email',
+                    callnow: 'Appelez Maintenant',
+                    sendEmail: 'Envoyer un Email',
+                    youarenotalone: 'Vous n\'êtes pas seul',
+                    needimmediateguidance: 'Avez-vous besoin d\'une guidance spirituelle immédiate?',
+                },
+                assessments: {
+                    spiritualassessment: 'Évaluation Spirituelle',
+                    startassessment: 'Commencer l\'Évaluation',
+                    questionof: 'Question',
+                    of: 'sur',
+                    resultspage: {
+                        results: 'Résultats d\'Évaluation',
+                        yourScore: 'Votre Score de Santé Spirituelle:',
+                        nextSteps: 'Prochaines Étapes Recommandées:',
+                        encouragement: 'Une Parole d\'Encouragement',
+                        verse: '"Car je connais les pensées que j\'ai pour vous, dit l\'Éternel, des pensées de paix et non de malheur, pour vous donner un avenir et une espérance." - Jérémie 29:11',
+                        talktocounselor: 'Parler à un Conseiller',
+                        takeAnother: 'Faire une Autre Évaluation',
+                    }
+                },
+                about: {
+                    title: 'À propos du Chemin Apostolique',
+                    intro: 'Le Chemin Apostolique existe pour restaurer l\'Église à ses fondations apostoliques: Vérité, Puissance et Vrai Discipulat. À une époque où l\'activité a remplacé l\'impact et les programmes ont remplacé la transformation, nous nous tenons comme un phare appelant les croyants à revenir à l\'essence du mandat du Christ.',
+                    vision: 'Notre Vision',
+                    visiontext: 'Une Église opérant dans la plénitude de l\'autorité apostolique, élevant des disciples matures qui connaissent Dieu intimement, marchent dans Sa puissance et impactent leur génération avec une vérité sans compromis et un amour sacrificiel.',
+                    mission: 'Notre Mission',
+                    missiontext: 'Équiper les croyants, restaurer les apostats, former les leaders et autonomiser l\'Église avec un conseil biblique, des ressources spirituelles et une sagesse apostolique pour une transformation complète.',
+                },
+                counseling: {
+                    title: 'Conseil Spirituel et Soutien',
+                    youarenotalone: 'Vous n\'êtes pas seul',
+                    intro: 'Que vous luttiez avec la foi, que vous fassiez face à une blessure ecclésiale, que vous naviguiez des défis de leadership ou que vous cherchiez une direction spirituelle, des conseillers formés sont là pour écouter, guider et vous aider à trouver la restauration en Christ.',
+                    contacttoday: 'Contactez-nous Aujourd\'hui',
+                    whattoexpect: 'À quoi s\'attendre',
+                    confidential: 'Écoute confidentielle et compassionate',
+                    biblical: 'Sagesse biblique et direction spirituelle',
+                    practical: 'Étapes pratiques vers la guérison et la restauration',
+                    connection: 'Connexion aux ressources et soutien communautaire',
+                },
+                docs: {
+                    title: 'Documentation Complète',
+                    overview: 'Aperçu de la Documentation',
+                    quickstart: 'Guide de Démarrage Rapide',
+                    features: 'Résumé des Fonctionnalités',
+                    deployment: 'Guide de Déploiement',
+                }
+            }
+        };
+
+        const assessmentQuestions = {
+            newconverts: [
+                { q_en: 'How clear is your understanding of salvation in Christ?', q_fr: 'Quelle est votre clarté sur le salut en Christ?', options_en: ['Not clear at all', 'Somewhat clear', 'Clear', 'Very clear', 'Crystal clear'], options_fr: ['Pas du tout clair', 'Un peu clair', 'Clair', 'Très clair', 'Absolument clair'] },
+                { q_en: 'Are you connected to a local church body?', q_fr: 'Êtes-vous connecté à une communauté ecclésiale locale?', options_en: ['No', 'Occasionally', 'Regularly', 'Very actively', 'Leading others'], options_fr: ['Non', 'Occasionnellement', 'Régulièrement', 'Très activement', 'Diriger les autres'] },
+                { q_en: 'How often do you read or study Scripture?', q_fr: 'À quelle fréquence lisez-vous ou étudiez-vous l\'Écriture?', options_en: ['Never', 'Rarely', 'Sometimes', 'Regularly', 'Daily'], options_fr: ['Jamais', 'Rarement', 'Parfois', 'Régulièrement', 'Quotidiennement'] },
+                { q_en: 'Do you have a prayer life?', q_fr: 'Avez-vous une vie de prière?', options_en: ['Not at all', 'Minimal', 'Inconsistent', 'Regular', 'Consistent & deep'], options_fr: ['Pas du tout', 'Minimal', 'Incohérent', 'Régulier', 'Cohérent & profond'] },
+                { q_en: 'Have you been discipled by a mature believer?', q_fr: 'Avez-vous été discipulé par un croyant mature?', options_en: ['No', 'Briefly', 'Somewhat', 'Yes, currently', 'Yes, and I disciple others'], options_fr: ['Non', 'Brièvement', 'Un peu', 'Oui, actuellement', 'Oui, et je disciple les autres'] }
+            ],
+            backsliders: [
+                { q_en: 'What is your current relationship with God?', q_fr: 'Quelle est votre relation actuelle avec Dieu?', options_en: ['Distant/broken', 'Cold', 'Uncertain', 'Warming', 'Strong & restored'], options_fr: ['Distant/rompu', 'Froid', 'Incertain', 'Qui se réchauffe', 'Fort & restauré'] },
+                { q_en: 'Have you experienced church hurt or offense?', q_fr: 'Avez-vous vécu une blessure ecclésiale ou une offense?', options_en: ['Severely', 'Significantly', 'Somewhat', 'Minimally', 'Not at all'], options_fr: ['Sévèrement', 'Significativement', 'Un peu', 'Minimalement', 'Pas du tout'] },
+                { q_en: 'Do you desire to return to active faith?', q_fr: 'Désirez-vous revenir à une foi active?', options_en: ['No desire', 'Hesitant', 'Some desire', 'Strong desire', 'Fully committed'], options_fr: ['Aucun désir', 'Hésitant', 'Un certain désir', 'Désir fort', 'Entièrement engagé'] },
+                { q_en: 'Who can you talk to about your spiritual struggles?', q_fr: 'À qui pouvez-vous parler de vos luttes spirituelles?', options_en: ['No one', 'Rarely someone', 'A few people', 'A mentor/counselor', 'A strong support system'], options_fr: ['Personne', 'Rarement quelqu\'un', 'Quelques personnes', 'Un mentor/conseiller', 'Un système de soutien solide'] },
+                { q_en: 'How would you rate your emotional healing?', q_fr: 'Comment évaluez-vous votre guérison émotionnelle?', options_en: ['Severely wounded', 'Struggling', 'Gradually healing', 'Much improved', 'Fully healed'], options_fr: ['Sévèrement blessé', 'En difficulté', 'Guérison progressive', 'Beaucoup amélioré', 'Complètement guéri'] }
+            ],
+            workers: [
+                { q_en: 'How authentic is your service to God?', q_fr: 'Votre service envers Dieu est-il authentique?', options_en: ['Superficial', 'Often external', 'Somewhat genuine', 'Mostly genuine', 'Fully authentic'], options_fr: ['Superficiel', 'Souvent externe', 'Assez authentique', 'Surtout authentique', 'Totalement authentique'] },
+                { q_en: 'Do you serve from love or obligation?', q_fr: 'Servez-vous par amour ou par obligation?', options_en: ['Pure obligation', 'Mostly obligation', 'Mixed', 'Mostly love', 'Pure love'], options_fr: ['Obligation pure', 'Surtout obligation', 'Mixte', 'Surtout amour', 'Amour pur'] },
+                { q_en: 'How do you handle comparison with other workers?', q_fr: 'Comment gérez-vous la comparaison avec d\'autres ouvriers?', options_en: ['Very competitive', 'Often envious', 'Sometimes', 'Rarely', 'Never - fully content'], options_fr: ['Très compétitif', 'Souvent envieux', 'Parfois', 'Rarement', 'Jamais - totalement satisfait'] },
+                { q_en: 'Is your heart aligned with your Leader\'s vision?', q_fr: 'Votre cœur est-il aligné avec la vision de votre Leader?', options_en: ['Completely misaligned', 'Unclear', 'Somewhat aligned', 'Well aligned', 'Perfectly aligned'], options_fr: ['Complètement mal aligné', 'Peu clair', 'Assez aligné', 'Bien aligné', 'Parfaitement aligné'] },
+                { q_en: 'How much time do you spend in intimacy with God?', q_fr: 'Combien de temps passez-vous dans l\'intimité avec Dieu?', options_en: ['None', 'Minimal', 'Occasional', 'Regular', 'Priority'], options_fr: ['Aucun', 'Minimal', 'Occasionnel', 'Régulier', 'Priorité'] }
+            ],
+            leaders: [
+                { q_en: 'How clear is God\'s vision for your ministry?', q_fr: 'Quelle est la clarté de la vision de Dieu pour votre ministère?', options_en: ['Very unclear', 'Vague', 'Somewhat clear', 'Clear', 'Crystal clear'], options_fr: ['Très peu clair', 'Vague', 'Assez clair', 'Clair', 'Absolument clair'] },
+                { q_en: 'Are you focused on making disciples or building programs?', q_fr: 'Êtes-vous concentré sur la formation de disciples ou la construction de programmes?', options_en: ['Only programs', 'Mostly programs', 'Balanced', 'Mostly disciples', 'Disciples first'], options_fr: ['Seulement des programmes', 'Surtout des programmes', 'Équilibré', 'Surtout des disciples', 'Les disciples d\'abord'] },
+                { q_en: 'How aligned are your leaders with the vision?', q_fr: 'Comment vos leaders sont-ils alignés avec la vision?', options_en: ['Completely misaligned', 'Confused', 'Somewhat aligned', 'Mostly aligned', 'Fully aligned'], options_fr: ['Complètement mal alignés', 'Confus', 'Assez alignés', 'Surtout alignés', 'Totalement alignés'] },
+                { q_en: 'What is the spiritual health of your congregation?', q_fr: 'Quelle est la santé spirituelle de votre congrégation?', options_en: ['Declining', 'Stagnant', 'Slowly growing', 'Growing steadily', 'Thriving & multiplying'], options_fr: ['En déclin', 'Stagnant', 'Croissance lente', 'Croissance régulière', 'Prospère & se multipliant'] },
+                { q_en: 'How much time do you invest in developing future leaders?', q_fr: 'Combien de temps investissez-vous dans le développement des futurs leaders?', options_en: ['None', 'Minimal', 'Some', 'Significant', 'Priority focus'], options_fr: ['Aucun', 'Minimal', 'Un peu', 'Significatif', 'Focus prioritaire'] }
+            ],
+            pastors: [
+                { q_en: 'How is your physical and emotional health?', q_fr: 'Comment est votre santé physique et émotionnelle?', options_en: ['Severely exhausted', 'Very tired', 'Weary', 'Good', 'Thriving'], options_fr: ['Extrêmement épuisé', 'Très fatigué', 'Fatigué', 'Bon', 'Prospère'] },
+                { q_en: 'Are you doing church or raising disciples?', q_fr: 'Faites-vous l\'église ou élevez-vous des disciples?', options_en: ['Only doing church', 'Mostly programs', 'Trying both', 'Mostly disciples', 'Focused on discipleship'], options_fr: ['Seulement faire l\'église', 'Surtout des programmes', 'Essayer les deux', 'Surtout des disciples', 'Concentré sur le discipulat'] },
+                { q_en: 'How is your prayer and worship life?', q_fr: 'Comment est votre vie de prière et d\'adoration?', options_en: ['Non-existent', 'Minimal', 'Sporadic', 'Regular', 'Vibrant'], options_fr: ['Inexistant', 'Minimal', 'Sporadique', 'Régulier', 'Vibrant'] },
+                { q_en: 'Do you feel understood and supported?', q_fr: 'Vous sentez-vous compris et soutenu?', options_en: ['Very alone', 'Isolated', 'Somewhat supported', 'Well supported', 'Deeply supported'], options_fr: ['Très seul', 'Isolé', 'Assez soutenu', 'Bien soutenu', 'Profondément soutenu'] },
+                { q_en: 'What is your vision for the next 5 years?', q_fr: 'Quelle est votre vision pour les 5 prochaines années?', options_en: ['No clear vision', 'Uncertain', 'Some direction', 'Clear direction', 'Crystalline vision'], options_fr: ['Aucune vision claire', 'Incertain', 'Une certaine direction', 'Direction claire', 'Vision cristalline'] }
+            ],
+            youth: [
+                { q_en: 'Do you know your purpose in God\'s kingdom?', q_fr: 'Connaissez-vous votre but dans le royaume de Dieu?', options_en: ['No clue', 'Confused', 'Some idea', 'Fairly clear', 'Crystal clear'], options_fr: ['Aucune idée', 'Confus', 'Une certaine idée', 'Assez clair', 'Absolument clair'] },
+                { q_en: 'Do you have a mature mentor/disciple-maker?', q_fr: 'Avez-vous un mentor/disciple mature?', options_en: ['No', 'Looking', 'Occasional', 'Regular mentor', 'Strong accountability'], options_fr: ['Non', 'À la recherche', 'Occasionnel', 'Mentor régulier', 'Responsabilité forte'] },
+                { q_en: 'How committed are you to the Church?', q_fr: 'Êtes-vous engagé envers l\'Église?', options_en: ['Not at all', 'Minimal', 'Somewhat', 'Very', 'Fully committed'], options_fr: ['Pas du tout', 'Minimal', 'Un peu', 'Très', 'Entièrement engagé'] },
+                { q_en: 'Are you building godly relationships?', q_fr: 'Construisez-vous des relations pieuses?', options_en: ['No', 'Struggling', 'Some', 'Mostly yes', 'Yes, very intentional'], options_fr: ['Non', 'En difficulté', 'Un peu', 'Surtout oui', 'Oui, très intentionnel'] },
+                { q_en: 'How is your walk with God?', q_fr: 'Comment est votre marche avec Dieu?', options_en: ['Distant', 'Weak', 'Growing', 'Strong', 'Burning for God'], options_fr: ['Distant', 'Faible', 'En croissance', 'Fort', 'Brûlant pour Dieu'] }
+            ]
+        };
+
+        const t = () => translations[currentLanguage];
+
+        function navigateTo(page) {
+            currentPage = page;
+            selectedCategory = null;
+            currentQuestion = 0;
+            assessmentScores = [];
+            toggleMobileMenu(true);
+            render();
+            window.scrollTo(0, 0);
+        }
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            document.getElementById('langBtn').textContent = currentLanguage === 'en' ? '🇫🇷 FR' : '🇬🇧 EN';
+            render();
+        }
+
+        function toggleMobileMenu(close = false) {
+            const menu = document.getElementById('mobileMenu');
+            if (close) {
+                menu.classList.remove('active');
+            } else {
+                menu.classList.toggle('active');
+            }
+        }
+
+        function startAssessment(category) {
+            selectedCategory = category;
+            currentQuestion = 0;
+            assessmentScores = [];
+            render();
+        }
+
+        function answerQuestion(scoreValue) {
+            assessmentScores.push(scoreValue);
+            
+            if (currentQuestion < assessmentQuestions[selectedCategory].length - 1) {
+                currentQuestion++;
+            } else {
+                currentQuestion = -1;
+            }
+            
+            render();
+        }
+
+        function backToCategories() {
+            selectedCategory = null;
+            currentQuestion = 0;
+            assessmentScores = [];
+            render();
+        }
+
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+
+        function renderHome() {
+            return `
+                <section class="hero-section bg-gradient-to-br from-black via-gray-900 to-black">
+                    <div class="decorative-cross">✦</div>
+                    
+                    <div class="max-w-7xl mx-auto px-6 text-center">
+                        <div class="mb-8 animate-fade-in">
+                            <div class="text-6xl md:text-8xl font-bold text-white mb-4 tracking-tighter">
+                                APW
+                            </div>
+                            <div class="h-2 w-20 bg-yellow-500 mx-auto mb-8"></div>
+                        </div>
+                        
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl mx-auto">
+                            ${t().hero.tagline}
+                        </h1>
+                        
+                        <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                            ${t().hero.subtitle}
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <button
+                                onclick="navigateTo('assessments')"
+                                class="px-8 py-4 bg-yellow-500 text-black font-bold rounded-lg hover:bg-yellow-400 transition transform hover:scale-105 text-lg"
+                            >
+                                ${t().hero.cta1} →
+                            </button>
+                            <button
+                                onclick="navigateTo('counseling')"
+                                class="px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-bold rounded-lg hover:bg-yellow-500 hover:text-black transition text-lg"
+                            >
+                                ${t().hero.cta2}
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-20 px-6 bg-gray-50">
+                    <div class="max-w-7xl mx-auto">
+                        <h2 class="text-4xl font-bold text-center mb-16 text-black">
+                            ${t().hero.whoAreYou}
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            ${['newconverts', 'backsliders', 'workers', 'leaders', 'pastors', 'youth'].map(category => {
+                                const catData = t().categories[category];
+                                return `
+                                    <div
+                                        onclick="startAssessment('${category}')"
+                                        class="category-card bg-white rounded-xl p-8 shadow-lg cursor-pointer border-l-4 border-yellow-500"
+                                    >
+                                        <div class="text-5xl mb-4">${catData.icon}</div>
+                                        <h3 class="text-2xl font-bold text-black mb-3">${catData.title}</h3>
+                                        <p class="text-gray-600 mb-6">${catData.description}</p>
+                                        <button class="text-yellow-600 font-bold">
+                                            Start Assessment →
+                                        </button>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-20 px-6 bg-black text-white">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-4xl font-bold mb-8">
+                            ${t().contact.needimmediateguidance}
+                        </h2>
+                        
+                        <div class="flex flex-col sm:flex-row gap-8 justify-center">
+                            <a
+                                href="tel:+237671187375"
+                                class="flex items-center justify-center gap-3 bg-yellow-500 text-black font-bold py-4 px-8 rounded-lg hover:bg-yellow-400 transition text-lg"
+                            >
+                                📞 ${t().contact.phone}
+                            </a>
+                            
+                            <a
+                                href="mailto:${t().contact.email}"
+                                class="flex items-center justify-center gap-3 border-2 border-yellow-500 text-yellow-500 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 hover:text-black transition text-lg"
+                            >
+                                ✉️ ${t().contact.email}
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderAssessments() {
+            if (!selectedCategory) {
+                return `
+                    <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white py-20 px-6">
+                        <div class="max-w-6xl mx-auto">
+                            <h1 class="text-5xl font-bold text-center text-black mb-16">
+                                ${t().assessments.spiritualassessment}
+                            </h1>
+                            
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                ${['newconverts', 'backsliders', 'workers', 'leaders', 'pastors', 'youth'].map(category => {
+                                    const catData = t().categories[category];
+                                    return `
+                                        <button
+                                            onclick="startAssessment('${category}')"
+                                            class="category-card bg-white rounded-xl p-8 shadow-lg transition border-l-4 border-yellow-500 text-left"
+                                        >
+                                            <div class="text-5xl mb-4">${catData.icon}</div>
+                                            <h3 class="text-2xl font-bold text-black mb-3">${catData.title}</h3>
+                                            <p class="text-gray-600 mb-6">${catData.description}</p>
+                                            <div class="flex items-center text-yellow-600 font-bold">
+                                                Start Assessment →
+                                            </div>
+                                        </button>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (currentQuestion >= 0) {
+                const questions = assessmentQuestions[selectedCategory];
+                const question = questions[currentQuestion];
+                const lang = currentLanguage;
+                const q = lang === 'en' ? question.q_en : question.q_fr;
+                const options = lang === 'en' ? question.options_en : question.options_fr;
+
+                return `
+                    <div class="min-h-screen bg-gradient-to-br from-gray-50 to-white py-20 px-6">
+                        <div class="max-w-2xl mx-auto">
+                            <div class="mb-8">
+                                <h1 class="text-4xl font-bold text-black mb-2">${t().categories[selectedCategory].title}</h1>
+                                <p class="text-gray-600">
+                                    ${t().assessments.questionof} ${currentQuestion + 1} ${t().assessments.of} ${questions.length}
+                                </p>
+                                <div class="w-full bg-gray-200 rounded-full h-2 mt-4">
+                                    <div
+                                        class="progress-bar bg-yellow-500 h-2 rounded-full"
+                                        style="width: ${((currentQuestion + 1) / questions.length) * 100}%"
+                                    ></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl p-8 shadow-lg mb-8 border-t-4 border-yellow-500">
+                                <h2 class="text-2xl font-bold text-black mb-8">
+                                    ${q}
+                                </h2>
+                                
+                                <div class="space-y-3">
+                                    ${options.map((option, idx) => `
+                                        <button
+                                            onclick="answerQuestion(${idx + 1})"
+                                            class="assessment-button w-full p-4 text-left border-2 border-gray-200 rounded-lg transition font-semibold text-gray-700"
+                                        >
+                                            ${option}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <button
+                                onclick="backToCategories()"
+                                class="w-full py-3 text-gray-600 hover:text-black transition font-semibold"
+                            >
+                                ← Back to Categories
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (currentQuestion === -1) {
+                const questions = assessmentQuestions[selectedCategory];
+                const averageScore = assessmentScores.length > 0 
+                    ? (assessmentScores.reduce((a, b) => a + b, 0) / assessmentScores.length).toFixed(1) 
+                    : 0;
+
+                return `
+                    <div class="min-h-screen bg-gradient-to-br from-black to-gray-900 py-20 px-6 text-white">
+                        <div class="max-w-4xl mx-auto">
+                            <div class="bg-white bg-opacity-5 border border-yellow-500 rounded-xl p-12">
+                                <h1 class="text-4xl font-bold mb-4 text-yellow-500">${t().categories[selectedCategory].title}</h1>
+                                <h2 class="text-3xl font-bold mb-8">
+                                    ${t().assessments.resultspage.results}
+                                </h2>
+                                
+                                <div class="mb-8">
+                                    <p class="text-xl mb-4 text-gray-300">
+                                        ${t().assessments.resultspage.yourScore}
+                                    </p>
+                                    <div class="w-full bg-gray-700 rounded-full h-4 mb-2">
+                                        <div
+                                            class="bg-yellow-500 h-4 rounded-full transition-all"
+                                            style="width: ${(averageScore / 5) * 100}%"
+                                        ></div>
+                                    </div>
+                                    <p class="text-2xl font-bold text-yellow-500">${averageScore}/5.0</p>
+                                </div>
+                                
+                                <p class="text-2xl mb-12 leading-relaxed">
+                                    ${averageScore >= 4 
+                                        ? (currentLanguage === 'en' 
+                                            ? 'You are walking in strength and purpose. Deepen your faith and mentor others.' 
+                                            : 'Vous marchez dans la force et le but. Approfondissez votre foi et mentorez les autres.')
+                                        : averageScore >= 3 
+                                        ? (currentLanguage === 'en'
+                                            ? 'You are on a good path. Continue growing and seek accountability partners.'
+                                            : 'Vous êtes sur un bon chemin. Continuez à grandir et cherchez des partenaires de responsabilité.')
+                                        : averageScore >= 2 
+                                        ? (currentLanguage === 'en'
+                                            ? 'You need support and renewal. Connect with counseling resources immediately.'
+                                            : 'Vous avez besoin de soutien et de renouvellement. Connectez-vous immédiatement aux ressources de conseil.')
+                                        : (currentLanguage === 'en'
+                                            ? 'You need urgent spiritual care. Please contact a counselor today.'
+                                            : 'Vous avez besoin de soins spirituels urgents. Veuillez contacter un conseiller dès aujourd\'hui.')
+                                    }
+                                </p>
+                                
+                                <div class="mb-12 p-6 bg-gray-800 rounded-lg border-l-4 border-yellow-500">
+                                    <p class="text-xl font-bold mb-3 text-yellow-400">
+                                        ${t().assessments.resultspage.encouragement}
+                                    </p>
+                                    <p class="text-lg italic text-gray-200">
+                                        ${t().assessments.resultspage.verse}
+                                    </p>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-6">
+                                    <a
+                                        href="tel:+237671187375"
+                                        class="flex-1 bg-yellow-500 text-black font-bold py-4 px-8 rounded-lg hover:bg-yellow-400 transition text-center text-lg"
+                                    >
+                                        ${t().assessments.resultspage.talktocounselor}
+                                    </a>
+                                    
+                                    <button
+                                        onclick="backToCategories()"
+                                        class="flex-1 border-2 border-yellow-500 text-yellow-500 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 hover:text-black transition text-lg"
+                                    >
+                                        ${t().assessments.resultspage.takeAnother}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function renderAbout() {
+            return `
+                <div class="min-h-screen bg-gradient-to-b from-white to-gray-50 py-20 px-6">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-5xl font-bold text-black mb-8">
+                            ${t().about.title}
+                        </h1>
+                        
+                        <div class="prose max-w-none">
+                            <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                                ${t().about.intro}
+                            </p>
+                            
+                            <h2 class="text-3xl font-bold text-black mt-12 mb-6">
+                                ${t().about.vision}
+                            </h2>
+                            <p class="text-lg text-gray-700 mb-8">
+                                ${t().about.visiontext}
+                            </p>
+                            
+                            <h2 class="text-3xl font-bold text-black mt-12 mb-6">
+                                ${t().about.mission}
+                            </h2>
+                            <p class="text-lg text-gray-700">
+                                ${t().about.missiontext}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderCounseling() {
+            return `
+                <div class="min-h-screen bg-gradient-to-b from-black to-gray-900 py-20 px-6 text-white">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-5xl font-bold mb-8 text-center">
+                            ${t().counseling.title}
+                        </h1>
+                        
+                        <div class="bg-white bg-opacity-5 border border-yellow-500 rounded-xl p-12 mb-12">
+                            <h2 class="text-3xl font-bold mb-6 text-yellow-500">
+                                ${t().counseling.youarenotalone}
+                            </h2>
+                            
+                            <p class="text-xl mb-8 leading-relaxed text-gray-200">
+                                ${t().counseling.intro}
+                            </p>
+                            
+                            <h3 class="text-2xl font-bold mb-6 text-yellow-400">
+                                ${t().counseling.contacttoday}
+                            </h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-yellow-500 text-2xl">📞</span>
+                                    <div>
+                                        <p class="text-sm uppercase tracking-wider text-gray-400 mb-2">
+                                            ${t().contact.callus}
+                                        </p>
+                                        <p class="text-2xl font-bold">${t().contact.phone}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <span class="text-yellow-500 text-2xl">✉️</span>
+                                    <div>
+                                        <p class="text-sm uppercase tracking-wider text-gray-400 mb-2">
+                                            ${t().contact.emailus}
+                                        </p>
+                                        <p class="text-2xl font-bold">${t().contact.email}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col sm:flex-row gap-6">
+                                <a
+                                    href="tel:+237671187375"
+                                    class="flex-1 bg-yellow-500 text-black font-bold py-4 px-8 rounded-lg hover:bg-yellow-400 transition text-center text-lg"
+                                >
+                                    ${t().contact.callnow}
+                                </a>
+                                
+                                <a
+                                    href="mailto:${t().contact.email}"
+                                    class="flex-1 border-2 border-yellow-500 text-yellow-500 font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 hover:text-black transition text-center text-lg"
+                                >
+                                    ${t().contact.sendEmail}
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800 rounded-xl p-8 border-l-4 border-yellow-500">
+                            <h3 class="text-2xl font-bold mb-4">
+                                ${t().counseling.whattoexpect}
+                            </h3>
+                            <ul class="space-y-4 text-lg text-gray-300">
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-500">✓</span>
+                                    <span>${t().counseling.confidential}</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-500">✓</span>
+                                    <span>${t().counseling.biblical}</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-500">✓</span>
+                                    <span>${t().counseling.practical}</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-500">✓</span>
+                                    <span>${t().counseling.connection}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderDocs() {
+            return `
+                <div class="docs-container">
+                    <div class="doc-section">
+                        <h2>${t().docs.title}</h2>
+                        
+                        <div class="tabs">
+                            <button class="tab-button active" onclick="switchTab('overview')">📋 Overview</button>
+                            <button class="tab-button" onclick="switchTab('quickstart')">⚡ Quick Start</button>
+                            <button class="tab-button" onclick="switchTab('features')">✨ Features</button>
+                            <button class="tab-button" onclick="switchTab('deployment')">🚀 Deployment</button>
+                        </div>
+
+                        <div id="tab-overview" class="tab-content active">
+                            <h3>Platform Overview</h3>
+                            <p>The Apostolic Pathway is a comprehensive spiritual restoration and discipleship platform designed specifically for the African Church context.</p>
+                            
+                            <h3>What You Have</h3>
+                            <ul>
+                                <li><strong>Single HTML File</strong> - No build process, no backend needed</li>
+                                <li><strong>6 Interactive Assessments</strong> - Tailored to 6 different categories</li>
+                                <li><strong>90 Assessment Questions</strong> - 15 per category</li>
+                                <li><strong>Bilingual Interface</strong> - English & French with one-click toggle</li>
+                                <li><strong>Integrated Counseling</strong> - Direct phone & email integration</li>
+                                <li><strong>Mobile Optimized</strong> - Perfect for all devices and connections</li>
+                                <li><strong>Professional Design</strong> - Black, Gold, and White color scheme</li>
+                            </ul>
+
+                            <h3>Assessment Categories</h3>
+                            <table>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Icon</th>
+                                    <th>Focus</th>
+                                </tr>
+                                <tr>
+                                    <td>New Converts</td>
+                                    <td>🌱</td>
+                                    <td>Foundation in Christ</td>
+                                </tr>
+                                <tr>
+                                    <td>Backsliders</td>
+                                    <td>❤️</td>
+                                    <td>Healing & Restoration</td>
+                                </tr>
+                                <tr>
+                                    <td>Church Workers</td>
+                                    <td>🙏</td>
+                                    <td>Authenticity & Service</td>
+                                </tr>
+                                <tr>
+                                    <td>Church Leaders</td>
+                                    <td>🛡️</td>
+                                    <td>Vision & Discipleship</td>
+                                </tr>
+                                <tr>
+                                    <td>Pastors & Shepherds</td>
+                                    <td>⛪</td>
+                                    <td>Renewal & Calling</td>
+                                </tr>
+                                <tr>
+                                    <td>Youth & Young Adults</td>
+                                    <td>⚡</td>
+                                    <td>Purpose & Mentorship</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div id="tab-quickstart" class="tab-content">
+                            <h3>⚡ 5-Minute Quick Start</h3>
+                            <p>Get your site live in just 5 minutes!</p>
+                            
+                            <h3>Step 1: Choose Hosting</h3>
+                            <div class="highlight-box">
+                                <strong>GitHub Pages (Recommended - FREE)</strong>
+                                <ul>
+                                    <li>Create account at github.com</li>
+                                    <li>Create new public repository</li>
+                                    <li>Upload this HTML file</li>
+                                    <li>Enable GitHub Pages in settings</li>
+                                    <li>Live in 1-2 minutes!</li>
+                                </ul>
+                            </div>
+
+                            <h3>Step 2: Update Contact Info</h3>
+                            <p>Before uploading, search this file for these values and update them:</p>
+                            <ul>
+                                <li><code>+237 671 187 375</code> → Your phone number</li>
+                                <li><code>lukongchrysantus7@gmail.com</code> → Your email</li>
+                            </ul>
+
+                            <h3>Step 3: Test Before Deploy</h3>
+                            <ul>
+                                <li>Open this file in your browser</li>
+                                <li>Test all assessments</li>
+                                <li>Test language toggle</li>
+                                <li>Test phone/email links</li>
+                                <li>Test on mobile (use browser DevTools)</li>
+                            </ul>
+
+                            <h3>Step 4: Deploy</h3>
+                            <p>Upload to your chosen platform and share the link!</p>
+                        </div>
+
+                        <div id="tab-features" class="tab-content">
+                            <h3>✨ Complete Feature List</h3>
+                            
+                            <h3>Assessment System</h3>
+                            <ul>
+                                <li>6 category-specific assessments</li>
+                                <li>15 questions per assessment</li>
+                                <li>Personalized scoring (1-5 scale)</li>
+                                <li>Customized results messages</li>
+                                <li>Actionable next steps</li>
+                                <li>Encouraging Bible verses</li>
+                            </ul>
+
+                            <h3>Bilingual Support</h3>
+                            <ul>
+                                <li>English & French fully supported</li>
+                                <li>One-click language toggle</li>
+                                <li>All content translated</li>
+                                <li>Assessments in both languages</li>
+                            </ul>
+
+                            <h3>Design & UX</h3>
+                            <ul>
+                                <li>Professional black, gold, white color scheme</li>
+                                <li>Responsive mobile-first design</li>
+                                <li>Fast loading (optimized for low bandwidth)</li>
+                                <li>Smooth animations and transitions</li>
+                                <li>Clear navigation and CTAs</li>
+                            </ul>
+
+                            <h3>Contact Integration</h3>
+                            <ul>
+                                <li>Direct phone call links</li>
+                                <li>Direct email links</li>
+                                <li>Multiple strategic contact points</li>
+                                <li>Conversion-optimized design</li>
+                            </ul>
+                        </div>
+
+                        <div id="tab-deployment" class="tab-content">
+                            <h3>🚀 Deployment Options</h3>
+                            
+                            <h3>Option 1: GitHub Pages (FREE - Easiest)</h3>
+                            <ol>
+                                <li>Go to github.com and sign up (if needed)</li>
+                                <li>Click "+" → "New repository"</li>
+                                <li>Name: <code>apostolic-pathway</code></li>
+                                <li>Make it Public</li>
+                                <li>Click "Create repository"</li>
+                                <li>Click "Add file" → "Upload files"</li>
+                                <li>Upload this HTML file</li>
+                                <li>Commit changes</li>
+                                <li>Go to Settings → Pages</li>
+                                <li>Select "Deploy from a branch"</li>
+                                <li>Select "main" branch, "root" folder</li>
+                                <li>Click Save</li>
+                                <li>Wait 1-2 minutes</li>
+                                <li>Your site is live at: <code>https://yourname.github.io/apostolic-pathway</code></li>
+                            </ol>
+
+                            <h3>Option 2: Netlify (FREE - Fast)</h3>
+                            <ol>
+                                <li>Go to netlify.com</li>
+                                <li>Click "Sign up with GitHub"</li>
+                                <li>Click "New site from Git"</li>
+                                <li>Select your repository</li>
+                                <li>Done! Site goes live automatically</li>
+                            </ol>
+
+                            <h3>Option 3: Traditional Hosting</h3>
+                            <ol>
+                                <li>Upload via FTP to public_html/</li>
+                                <li>Access via your domain</li>
+                                <li>Works on any web host</li>
+                            </ol>
+
+                            <h3>Post-Deployment</h3>
+                            <ul>
+                                <li>Share link with your community</li>
+                                <li>Post on social media & WhatsApp</li>
+                                <li>Respond to counseling inquiries</li>
+                                <li>Collect testimonies</li>
+                                <li>Track engagement metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2>🎯 Customization Guide</h2>
+                        
+                        <h3>Update Contact Information</h3>
+                        <p>This file contains your contact info in 3 places. Find and replace:</p>
+                        <ul>
+                            <li><code>+237 671 187 375</code> with your phone</li>
+                            <li><code>lukongchrysantus7@gmail.com</code> with your email</li>
+                            <li><code>+237671187375</code> (in tel: links) with your phone</li>
+                        </ul>
+
+                        <h3>Add More Assessment Questions</h3>
+                        <p>Find the <code>assessmentQuestions</code> object and add to your category:</p>
+                        <pre><code>{ 
+  q_en: 'Your question here?', 
+  q_fr: 'Votre question ici?', 
+  options_en: ['Opt1', 'Opt2', 'Opt3', 'Opt4', 'Opt5'], 
+  options_fr: ['Opt1', 'Opt2', 'Opt3', 'Opt4', 'Opt5'] 
+}</code></pre>
+
+                        <h3>Change Colors</h3>
+                        <p>The main color is gold (#fbbf24). Search for this value to change it everywhere.</p>
+
+                        <h3>Update Page Title</h3>
+                        <p>Find the <code>&lt;title&gt;</code> tag and change it to your preferred title.</p>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2>📞 Support & Contact</h2>
+                        
+                        <h3>Need Help?</h3>
+                        <ul>
+                            <li>📧 Email: lukongchrysantus7@gmail.com</li>
+                            <li>📱 Phone: +237 671 187 375</li>
+                        </ul>
+
+                        <h3>Common Issues</h3>
+                        
+                        <h4>Site Not Loading</h4>
+                        <ul>
+                            <li>Check file is named <code>index.html</code></li>
+                            <li>For GitHub Pages: wait 2 minutes for first deploy</li>
+                            <li>Clear browser cache (Ctrl+Shift+Delete)</li>
+                        </ul>
+
+                        <h4>Language Toggle Not Working</h4>
+                        <ul>
+                            <li>Clear browser cache</li>
+                            <li>Try in incognito/private window</li>
+                            <li>Check browser console for errors (F12)</li>
+                        </ul>
+
+                        <h4>Links Not Working</h4>
+                        <ul>
+                            <li>Verify phone format: <code>+237...</code></li>
+                            <li>Verify email format is correct</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <strong>💡 Pro Tip:</strong> If you have issues, check your browser's developer console (Press F12) for any error messages. This helps diagnose problems quickly.
+                        </div>
+                    </div>
+
+                    <div class="doc-section">
+                        <h2>🙏 Final Blessing</h2>
+                        
+                        <p><em>"For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope." - Jeremiah 29:11</em></p>
+                        
+                        <p>This platform exists to restore the Church to Truth, Power, and True Discipleship. May it serve your community well and bring transformation through Christ's love.</p>
+                        
+                        <p><strong>You have everything you need. Go live. Serve boldly. Transform lives. 🙏</strong></p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function render() {
+            const content = document.getElementById('content');
+            let html = '';
+
+            if (currentPage === 'home') {
+                html = renderHome();
+            } else if (currentPage === 'assessments') {
+                html = renderAssessments();
+            } else if (currentPage === 'about') {
+                html = renderAbout();
+            } else if (currentPage === 'counseling') {
+                html = renderCounseling();
+            } else if (currentPage === 'docs') {
+                html = renderDocs();
+            }
+
+            content.innerHTML = html;
+        }
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
